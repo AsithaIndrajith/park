@@ -28,9 +28,9 @@ class ParkDetails extends React.Component {
     return {
       headerTitle: params.title,
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: 'white',
+      headerTintColor: '#014421',
     };
   };
 

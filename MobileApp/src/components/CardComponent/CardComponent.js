@@ -1,6 +1,13 @@
 import * as React from 'react';
-import {View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import {Card, Text, Avatar} from 'react-native-paper';
+import TimeAgo from 'react-native-timeago';
 
 class CardComponent extends React.Component {
   constructor(props) {
@@ -18,16 +25,23 @@ class CardComponent extends React.Component {
           }}>
           <Card.Title
             title={this.props.subtitle}
-            subtitle={this.props.title}
+            subtitle={'@' + this.props.title}
             left={() => (
               <Avatar.Image size={40} source={{uri: this.props.user}} />
             )}
             right={() => (
-              <Avatar.Icon
-                style={{backgroundColor: '#014421', marginRight: 5}}
-                size={35}
-                color="white"
-                icon="shield-check"
+              // <Avatar.Icon
+              //   style={{backgroundColor: '#014421', marginRight: 5}}
+              //   size={35}
+              //   color="white"
+              //   icon="shield-check"
+              // />
+              <TimeAgo
+                time={
+                  this.props.result !== undefined
+                    ? this.props.result[0][1]
+                    : this.props.content[0][1]
+                }
               />
             )}
           />

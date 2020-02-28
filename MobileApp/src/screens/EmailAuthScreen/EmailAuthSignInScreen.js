@@ -18,9 +18,9 @@ export default class EmailAuthScreen extends React.Component {
     return {
       headerTitle: 'Sign In',
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#014421',
     };
   };
 
@@ -103,7 +103,7 @@ export default class EmailAuthScreen extends React.Component {
                 <View
                   style={{
                     padding: 10,
-                    backgroundColor: 'black',
+                    // backgroundColor: 'white',
                     borderRadius: 100,
                   }}>
                   <Image source={LOGOB} style={styles.logo} />
@@ -118,7 +118,6 @@ export default class EmailAuthScreen extends React.Component {
                   onChangeText={text => this.setState({email: text})}
                   placeholder={'Eg. abc@gmail.com'}
                   mode="outlined"
-                  style={{borderRadius: 0}}
                   inlineImageLeft={'email'}
                   inlineImagePadding={20}
                   autoCompleteType={'email'}
@@ -228,8 +227,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 30,
-    height: 30,
+    width: 50,
+    height: 50,
     resizeMode: 'stretch',
   },
   logoText: {

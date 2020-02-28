@@ -29,13 +29,13 @@ class FormScreen extends React.Component {
     return {
       headerTitle: 'Observation',
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: 'white',
+      headerTintColor: '#014421',
       headerRight: () => (
         <Button
-          style={{margin: 5}}
-          mode="contained"
+          style={{margin: 5, backgroundColor: '#014421'}}
+          mode="outlined"
           onPress={() => params.handlePress()}>
           Share
         </Button>
@@ -127,7 +127,7 @@ class FormScreen extends React.Component {
       address: this.state.address.toString(),
     });
 
-    await this.setState({
+    this.setState({
       activityIndicator: false,
       sDialogVisible: true,
     });
@@ -169,12 +169,17 @@ class FormScreen extends React.Component {
                 address:
                   responseJson.results.length > 0
                     ? responseJson.results[0].formatted_address.split(',')
-                    : 'Unnamed location',
+                    : 'Sri Lanka',
               });
               console.log(
                 'ADDRESS GEOCODE: => ' +
                   JSON.stringify(responseJson.results[0].formatted_address),
               );
+            })
+            .catch(err => {
+              console.log(err);
+              this.props.navigation.navigate('CameraViewScreen');
+              return Alert.alert(err.title, err.message);
             });
           this.setState({
             location: [
@@ -186,10 +191,7 @@ class FormScreen extends React.Component {
         error => {
           console.log('Error', JSON.stringify(error));
           this.props.navigation.navigate('CameraViewScreen');
-          return Alert.alert(
-            'Location Error',
-            'Please turn on the location access.',
-          );
+          return Alert.alert(error.title, error.message);
         },
         {enableHighAccuracy: false},
       );
@@ -270,7 +272,7 @@ class FormScreen extends React.Component {
           <ToggleButtonGroupHorizontal
             parentCallback={this.FormComponentCallbackFunction}
             type={'isAlive'}
-            title={'Alive or Dead'}
+            title={'Alive?'}
             values={['Alive', 'Dead']}
             icon={'heart'}
           />
@@ -281,7 +283,7 @@ class FormScreen extends React.Component {
             multiline={true}
             isNumeric={false}
           />
-          <View style={{width: '100%', flexDirection: 'row-reverse'}}>
+          {/* <View style={{width: '100%', flexDirection: 'row-reverse'}}>
             <Button
               style={{
                 height: 50,
@@ -291,9 +293,9 @@ class FormScreen extends React.Component {
               }}
               mode="outlined"
               onPress={() => this.uploadData()}>
-              Share
+              save draft
             </Button>
-          </View>
+          </View> */}
         </ScrollView>
       </View>
     );

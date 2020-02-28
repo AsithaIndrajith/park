@@ -23,16 +23,16 @@ class ProfileScreen extends React.Component {
     return {
       headerTitle: 'My Profile',
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#014421',
       headerRight: () => (
         <Menu
           visible={params.showMenu}
           onDismiss={() => params.closeMenu()}
           anchor={
             <TouchableOpacity onPress={() => params.openMenu()}>
-              <Icon name="dots-vertical" size={30} color="white" />
+              <Icon name="dots-vertical" size={30} color="#014421" />
             </TouchableOpacity>
           }>
           <Menu.Item
@@ -320,10 +320,11 @@ class ProfileScreen extends React.Component {
                               : item[8][0] == 'p'
                               ? 'yellow'
                               : 'red',
-                          height: 30,
-                          width: 30,
+                          height: 38,
+                          width: 38,
                           justifyContent: 'center',
                           alignItems: 'center',
+                          borderBottomLeftRadius: 10,
                         }}>
                         <Text style={{color: 'white', fontWeight: 'bold'}}>
                           {item[8][0].toUpperCase()}

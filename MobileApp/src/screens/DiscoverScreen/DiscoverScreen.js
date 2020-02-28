@@ -15,9 +15,9 @@ class DiscoverScreen extends React.Component {
     return {
       headerTitle: 'Explore Near By',
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: 'white',
+      headerTintColor: '#014421',
     };
   };
 
@@ -53,6 +53,8 @@ class DiscoverScreen extends React.Component {
       let crntTime = new Date().getTime();
       let dif = crntTime - time;
       if (dif <= 604800000) {
+        continue;
+      } else if (val[i].verified !== 'verified') {
         continue;
       }
       let photUrl = val[i].photoURL;

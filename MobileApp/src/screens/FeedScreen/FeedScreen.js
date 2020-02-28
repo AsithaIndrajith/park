@@ -22,9 +22,9 @@ class FeedScreen extends React.Component {
     return {
       headerTitle: 'Home',
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#014421',
 
       headerRight: () => (
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
@@ -109,7 +109,7 @@ class FeedScreen extends React.Component {
       let photUrl = val[i].photoURL;
       let location = val[i].location;
       time = time.toString().split(' ');
-      time = time.splice(0, time.length - 1);
+      // time = time.splice(0, time.length - 1);
       time = time.toString().replace(/,/g, ' ');
       let result = generateResult(val[i]);
       let address = val[i].address;
@@ -172,7 +172,7 @@ class FeedScreen extends React.Component {
       let photUrl = val[i].photoURL;
       let location = val[i].location;
       time = time.toString().split(' ');
-      time = time.splice(0, time.length - 1);
+      // time = time.splice(0, time.length - 1);
       time = time.toString().replace(/,/g, ' ');
       let result = generateResult(val[i]);
       let address = val[i].address;
@@ -250,10 +250,7 @@ class FeedScreen extends React.Component {
                         subtitle={item[5]}
                         user={item[1]}
                         image={item[2]}
-                        content={[
-                          ['calendar-clock', 'On ' + item[4].toString()],
-                          ['map-marker', item[3].toString()],
-                        ]}
+                        content={[['map-marker', item[3].toString()]]}
                       />
                     )}
                     // Item Key

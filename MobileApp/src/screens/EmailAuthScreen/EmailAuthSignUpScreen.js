@@ -20,9 +20,9 @@ export default class EmailAuthScreen extends React.Component {
     return {
       headerTitle: 'Sign In',
       headerStyle: {
-        backgroundColor: '#004c21',
+        backgroundColor: 'white',
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#014421',
     };
   };
 
@@ -39,7 +39,8 @@ export default class EmailAuthScreen extends React.Component {
       activityIndicator: false,
       usernameErrMessage: 'Username is invalid!',
       usernameErr: false,
-      passwordErrMessage: 'Password is invalid',
+      passwordErrMessage:
+        'Password must contain one special character, one uppercase, one lowercase and least 8 characters long',
       passwordErr: false,
       emailErrMessage: 'Email is invalid',
       emailErr: false,
@@ -136,7 +137,7 @@ export default class EmailAuthScreen extends React.Component {
                 <View
                   style={{
                     padding: 10,
-                    backgroundColor: 'black',
+                    // backgroundColor: 'white',
                     borderRadius: 100,
                   }}>
                   <Image source={LOGOB} style={styles.logo} />
@@ -174,9 +175,7 @@ export default class EmailAuthScreen extends React.Component {
               </View>
 
               <View style={styles.btnContainer}>
-                <Text style={{...styles.fieldText, marginTop: 10}}>
-                  Email
-                </Text>
+                <Text style={{...styles.fieldText, marginTop: 10}}>Email</Text>
                 <TextInput
                   value={this.state.email}
                   onChangeText={text => this.setState({email: text})}
@@ -262,10 +261,10 @@ export default class EmailAuthScreen extends React.Component {
                 </Snackbar>
               </View>
               <Button
-                  style={[styles.btn, {marginTop: 'auto'}]}
-                  onPress={() => this.signUpBtnHandler()}
-                  mode="outlined">
-                  Sign Up
+                style={[styles.btn, {marginTop: 'auto'}]}
+                onPress={() => this.signUpBtnHandler()}
+                mode="outlined">
+                Sign Up
               </Button>
             </View>
           </ScrollView>
@@ -278,7 +277,7 @@ export default class EmailAuthScreen extends React.Component {
 const styles = StyleSheet.create({
   fieldText: {
     fontFamily: 'ProximaNova-Regular',
-    fontWeight: '600'
+    fontWeight: '600',
   },
   container: {
     flex: 1,
@@ -296,7 +295,7 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     borderRadius: 10,
-    backgroundColor: '#2ecc71'
+    backgroundColor: '#2ecc71',
   },
   logoIconContainer: {
     flexDirection: 'row',
@@ -304,8 +303,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 30,
-    height: 30,
+    width: 50,
+    height: 50,
     resizeMode: 'stretch',
   },
   logoText: {
@@ -319,7 +318,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     justifyContent: 'center',
     alignItems: 'center',
-    height: Dimensions.get('window').height
+    height: Dimensions.get('window').height,
   },
   logoBtnCntner: {
     flex: 1,

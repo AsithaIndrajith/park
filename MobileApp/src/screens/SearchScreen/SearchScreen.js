@@ -25,9 +25,9 @@ class SearchScreen extends React.Component {
     const {params = {}} = navigation.state;
     return {
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: 'white',
+      headerTintColor: '#014421',
       headerRight: () => (
         <Searchbar
           placeholder="Search"

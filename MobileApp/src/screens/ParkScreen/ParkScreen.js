@@ -12,17 +12,18 @@ class ParkScreen extends React.Component {
     return {
       headerTitle: 'Sri Lankan Wild Life Parks',
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: 'white',
-      // headerRight: () => (
-      //   <Button
-      //     onPress={() => navigation.navigate('Profile')}
-      //     mode="contained"
-      //     style={{marginRight: 5}}>
-      //     Profle
-      //   </Button>
-      // ),
+      headerTintColor: '#014421',
+      headerRight: () => (
+        <Button
+          icon="account"
+          mode="contained"
+          style={{marginRight: 5}}
+          onPress={() => navigation.navigate('Profile')}>
+          Profile
+        </Button>
+      ),
     };
   };
 

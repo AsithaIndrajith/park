@@ -4,7 +4,11 @@
 import * as React from 'react';
 import {AppRegistry, StatusBar} from 'react-native';
 import App from './App';
-import {configureFonts, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import {
+  configureFonts,
+  DefaultTheme,
+  Provider as PaperProvider,
+} from 'react-native-paper';
 import {name as appName} from './app.json';
 
 const fontConfig = {
@@ -40,12 +44,12 @@ const theme = {
 };
 
 export default function Main() {
-    return (
-      <PaperProvider theme={theme}>
-        <StatusBar backgroundColor="#014421" barStyle="light-content" />
-        <App />
-      </PaperProvider>
-    );
-  }
+  return (
+    <PaperProvider theme={theme}>
+      <StatusBar backgroundColor="gray" barStyle="light-content" />
+      <App />
+    </PaperProvider>
+  );
+}
 
 AppRegistry.registerComponent(appName, () => Main);

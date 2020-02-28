@@ -20,9 +20,9 @@ class SpeciesDetailsScreen extends React.Component {
     return {
       headerTitle: params.content[0],
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: 'white',
+      headerTintColor: '#014421',
     };
   };
 

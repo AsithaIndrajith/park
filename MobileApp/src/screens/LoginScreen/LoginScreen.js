@@ -18,9 +18,9 @@ class LoginScreen extends React.Component {
     return {
       headerTitle: 'Sign In',
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#014421',
     };
   };
 
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     resizeMode: 'stretch',
-    margin: 10
+    margin: 10,
   },
   logoText: {
     color: 'black',
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   logoImgContainer: {
     backgroundColor: 'black',
     borderRadius: 100,
-    marginLeft: 10
+    marginLeft: 10,
   },
 });
 export default LoginScreen;

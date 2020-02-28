@@ -20,9 +20,9 @@ class AboutScreen extends React.Component {
     return {
       headerTitle: 'About Sri Lankan Wild Life Park App',
       headerStyle: {
-        backgroundColor: '#014421',
+        backgroundColor: 'white',
       },
-      headerTintColor: 'white',
+      headerTintColor: '#014421',
     };
   };
 
